@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import Navbard from './Components/Navbar.js';
+import Carouselslide from './Components/Carousel.js';
 
 class App extends Component {
   constructor(props) {
@@ -10,7 +11,9 @@ class App extends Component {
 
   render() {
     return (
+        <div>
         <Navbard/>
+        </div>
     );
   }
 }

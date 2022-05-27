@@ -1,6 +1,13 @@
 
 import React, {Component} from 'react';
 import {Navbar, Nav , Container} from 'react-bootstrap';
+import Carouselslide from '../Components/Carousel';
+import {
+    BrowserRouter,
+    Routes,
+    Route,
+    Link,
+  } from "react-router-dom";
 
 class Navbard extends Component {
   constructor(props) {
@@ -10,19 +17,27 @@ class Navbard extends Component {
 
   render() {
     return (
-      <div className="app">
+        <BrowserRouter>
+      
 
   <Navbar bg="dark" variant="dark">
     <Container>
-    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+    <Navbar.Brand as={Link} to="/">Navbar</Navbar.Brand>
     <Nav className="me-auto">
-      <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#features">Features</Nav.Link>
-      <Nav.Link href="#pricing">Pricing</Nav.Link>
+      <Nav.Link as={Link} to="/">Home</Nav.Link>
+      <Nav.Link as={Link} to="/skills">skills</Nav.Link>
+      <Nav.Link as={Link} to="/outlook">outlook</Nav.Link>
     </Nav>
     </Container>
   </Navbar>
-      </div>
+  
+      <Routes>
+
+          <Route path="/" element={<Carouselslide/>}/>
+          <Route path="/" element={<Skills/>}/>
+
+      </Routes>
+      </BrowserRouter>
     );
   }
 }
